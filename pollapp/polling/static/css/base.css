@@ -1,0 +1,45 @@
+.bg-pollate{
+    background-color:blueviolet;
+}
+
+.profile{
+   
+    justify-content: right;
+    text-align: right;
+    margin-left:auto; 
+    margin-right:0;
+    border-right:0;
+    height: 100%;
+
+}
+/*
+.profile:hover{
+    background-color: cornflowerblue;
+    background-color: #fff;
+    box-shadow:
+        0 0 60px 30px #fff,  
+        0 0 100px 60px #f0f, 
+        0 0 140px 90px #0ff; 
+}*/
+
+.scrollingtext{
+    background-color: firebrick;
+    height: 100%;
+}
+
+.navbar{ margin : 0 
+    !important; }
+
+.question-content{
+    background-color: #5b73ff;
+    margin: auto;
+    padding-top: 10%;
+    border: 1px solid rgb(173, 34, 111);
+    width: 100%;
+    border-radius: 5px;
+  }
+
+
+
+
+

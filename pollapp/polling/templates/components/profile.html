@@ -1,0 +1,21 @@
+{% if user.is_authenticated %}
+<div  class="profile myGlower">
+{% if user.profile.image %}
+<img src = "{{user.profile.image}}" >
+{% else %}
+{% load static %}
+<img src = "{% static 'img/BigP.jpg' %}" >
+{%endif%}
+<br>
+<h6 class ="profile" id='usertext'>Welcome, {{user.username}}!</h6>
+<br>
+<h6>Score:</h6><h6 class = "profile" id = 'profileScore'> {{user.information.score}}</h6>
+</div>
+<h6>Following:</h6>
+{% for following in user.following.all %}
+<br>
+<img src = "{% static 'img/BigP.jpg' %}" >
+<a href='/users/{{following.user.id}}'>{{following.user.username}}</a>
+
+{%endfor%}
+{% endif %}

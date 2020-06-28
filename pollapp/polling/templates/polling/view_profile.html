@@ -1,0 +1,76 @@
+{% extends 'polling/base.html' %}
+
+<!--- Prevent profile sideview from rendering-->
+{% block rightcol %}
+{% endblock %}
+{% block leftcol %}
+{% endblock %}
+{% block midcol %}
+<div style="justify-content: left; float: left;display:flex;text-align: left;">
+Hello, {{user.username}}
+
+<br>
+Your Score: {{user.information.score}}
+
+{% if not relationship %}
+<form method = 'POST' action = '/follow'>
+{%csrf_token%}
+<input type='hidden' name='user_id' value='{{user.id}}'>
+<button class = 'btn btn-primary' type = 'submit' value='Follow me'>Follow me!</button>
+</form>
+</div>
+{%else%}
+<h6>You are already following this user</h6>
+{%endif%}
+{% endblock %}
+
+
+{% block bottomleftcol %}
+<h6>You asked:</h6>
+    <table class = "table">
+    
+    <thead class="thead-dark">
+        </thead>
+    <tbody>
+        {%for question in asked_questions %}
+        <tr>
+        <td>{{question.title}}</td>
+        <td style="font-size: x-small;">{{question.content}}</td>
+            {% for option in question.options.all %}
+            <tr style="font-size: xx-small;">
+                <td>{{option.content}}</td>
+                <td>{{option.score}}</td>
+            </tr>
+            {%endfor%}
+        </tr>
+        {%endfor%}
+    </tbody>
+    </table>
+{%endblock%}
+
+{% block bottomrightcol %}
+<h6>You answered:</h6>
+    <table class = "table">
+    
+    <thead class="thead-dark">
+        </thead>
+    <tbody>
+        {%for answer in question_answers %}
+        <tr>
+        <td>{{answer.question.title}}</td>
+        <td style="font-size: x-small; ">{{answer.question.content}}</td>
+        <td style="font-size: x-small;color:brown">{{answer.content}}</td>
+        {% for option in answer.question.options.all %}
+            <tr style="font-size: xx-small;">
+                <td>{{option.content}}</td>
+                <td>{{option.score}}</td>
+            </tr>
+            {%endfor%}
+        </tr>
+    {%endfor%}
+    </tbody>
+    </table>
+    
+{%endblock %}
+
+      

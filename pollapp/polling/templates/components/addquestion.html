@@ -1,0 +1,18 @@
+
+
+
+
+
+    
+        <form class = 'form' method = 'POST' action = '/add'>
+            {% csrf_token %}
+            <input type='hidden' value = '/' name = 'next'>
+            <textarea class='form-control' name ='title' placeholder = 'Your question title...'></textarea>
+            <textarea class='form-control' name ='content' placeholder = 'Your question body...'></textarea>
+            <input type='text' name = 'option_one'>
+            <input type='text' name = 'option_two'>
+            <input type='text' name = 'option_three'>
+            <input type='text' name = 'option_four'>
+            <button type = 'submit' class= 'btn btn-primary'>Ask now!</button>
+        </form>
+    

@@ -1,0 +1,19 @@
+@-webkit-keyframes glow {
+    to {
+         border-color: #69c800;
+    -webkit-box-shadow: 0 0 100% #69c800;
+       -moz-box-shadow: 0 0 100% #69c800;
+            box-shadow: 0 0 100% #69c800;
+    }
+}
+
+.myGlower {
+
+    border: 1px solid transparent;
+    -webkit-animation: glow 1.0s infinite alternate;  
+     -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+       -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
+            transition: border 1.0s linear, box-shadow 1.0s linear;
+     height:auto;
+    
+}
