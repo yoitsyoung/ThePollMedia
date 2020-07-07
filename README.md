@@ -11,12 +11,12 @@
 7. It is styled much better.....
 
 ### Dir map
-/images -> Storage space for uploaded profile images
-Polling -> Main app
-Forms.py -> Contains extended user creation form
-Models.py -> User model, Question model, Option model
-/static -> html, css, js files
-views.py -> see view logic
+-/images -> Storage space for uploaded profile images
+-Polling -> Main app
+-Forms.py -> Contains extended user creation form
+-Models.py -> User model, Question model, Option model
+-/static -> html, css, js files
+-views.py -> see view logic
 
 ### Installed Packages:
 Standard django installation
